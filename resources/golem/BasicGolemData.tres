@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GolemData" format=3 uid="uid://ba6aaoi630lcm"]
+
+[ext_resource type="Script" uid="uid://dgtrthr14bt8t" path="res://resources/golem/GolemResource.gd" id="1_xobcw"]
+[ext_resource type="Texture2D" uid="uid://dryog4yayag03" path="res://assets/golem basic new.png" id="2_gjjuv"]
+
+[resource]
+script = ExtResource("1_xobcw")
+health = 10
+attack = 2
+cooldown = 0.6
+speed = 0.5
+texture = ExtResource("2_gjjuv")
+metadata/_custom_type_script = "uid://dgtrthr14bt8t"

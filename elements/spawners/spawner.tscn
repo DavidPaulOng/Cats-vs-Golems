@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cdoc2qlq8pllh"]
+
+[ext_resource type="Script" uid="uid://b24ox5r0xv5yx" path="res://elements/spawners/spawner.gd" id="1_6jowt"]
+[ext_resource type="PackedScene" uid="uid://dvnpa1wu535iy" path="res://elements/golems/Golem.tscn" id="2_ldboo"]
+[ext_resource type="Texture2D" uid="uid://bixl8yty2l4ub" path="res://assets/golem basic.png" id="3_72aqk"]
+
+[node name="Spawner" type="Node2D" unique_id=1549048918]
+script = ExtResource("1_6jowt")
+entity_scene = ExtResource("2_ldboo")
+spawn_interval = 10.0
+
+[node name="Timer" type="Timer" parent="." unique_id=915039897]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1680988968]
+texture = ExtResource("3_72aqk")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

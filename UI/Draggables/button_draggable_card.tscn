@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dqydrg0ska6bp"]
+
+[ext_resource type="Script" uid="uid://cpiiqiyu1xp8o" path="res://UI/Draggables/button_draggable_card.gd" id="1_h71mi"]
+
+[node name="ButtonDraggableCard" type="PanelContainer" unique_id=278704441]
+self_modulate = Color(17.787, 3.581, 3.581, 0)
+offset_right = 20.0
+offset_bottom = 20.0
+mouse_filter = 2
+script = ExtResource("1_h71mi")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=484641912]
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="." unique_id=1954480990]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]

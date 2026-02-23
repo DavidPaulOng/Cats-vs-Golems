@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://60qsx4w02nf5"]
+
+[ext_resource type="Script" uid="uid://co6u5prji6koj" path="res://UI/Draggables/Control Draggables (Not Used)/droppable_slot.gd" id="1_b6cok"]
+[ext_resource type="Texture2D" uid="uid://clp5thvhetkbd" path="res://assets/lazy_cat.png" id="2_f7bqr"]
+
+[node name="DroppableSlot" type="PanelContainer" unique_id=1589600925]
+offset_right = 111.0
+offset_bottom = 100.0
+script = ExtResource("1_b6cok")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=669773783]
+layout_mode = 2
+texture = ExtResource("2_f7bqr")

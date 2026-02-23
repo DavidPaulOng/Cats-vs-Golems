@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://bpbfk6l5i0qyr"]
+
+[ext_resource type="PackedScene" uid="uid://dwdnpttms2rru" path="res://elements/cats/lazy_cat.tscn" id="2_6b72x"]
+[ext_resource type="PackedScene" uid="uid://cafvmjq65kbll" path="res://elements/cats/orange.tscn" id="4_6b72x"]
+[ext_resource type="PackedScene" uid="uid://b4pabekukpe6s" path="res://elements/tile.tscn" id="4_la406"]
+[ext_resource type="PackedScene" uid="uid://cdoc2qlq8pllh" path="res://elements/spawners/spawner.tscn" id="5_la406"]
+[ext_resource type="PackedScene" uid="uid://c7coughxhbhwf" path="res://elements/UI/draggable_card.tscn" id="6_tci2t"]
+[ext_resource type="PackedScene" uid="uid://60qsx4w02nf5" path="res://elements/UI/droppable_slot.tscn" id="7_ycjph"]
+
+[node name="Main" type="Node2D" unique_id=919380231]
+
+[node name="area" type="Node2D" parent="." unique_id=249111929]
+
+[node name="row 1" type="Node2D" parent="area" unique_id=1971123068]
+
+[node name="Tile1" parent="area/row 1" unique_id=647921897 instance=ExtResource("4_la406")]
+position = Vector2(250, 150)
+
+[node name="Tile2" parent="area/row 1" unique_id=1777559529 instance=ExtResource("4_la406")]
+position = Vector2(350, 150)
+
+[node name="Tile3" parent="area/row 1" unique_id=1903374405 instance=ExtResource("4_la406")]
+position = Vector2(450, 150)
+
+[node name="Tile4" parent="area/row 1" unique_id=2001953809 instance=ExtResource("4_la406")]
+position = Vector2(550, 150)
+
+[node name="Tile5" parent="area/row 1" unique_id=1593119059 instance=ExtResource("4_la406")]
+position = Vector2(650, 150)
+
+[node name="Tile6" parent="area/row 1" unique_id=2143751106 instance=ExtResource("4_la406")]
+position = Vector2(750, 150)
+
+[node name="Tile7" parent="area/row 1" unique_id=773581899 instance=ExtResource("4_la406")]
+position = Vector2(850, 150)
+
+[node name="row 2" type="Node2D" parent="area" unique_id=1021831716]
+
+[node name="Tile1" parent="area/row 2" unique_id=744635585 instance=ExtResource("4_la406")]
+position = Vector2(250, 250)
+
+[node name="Tile2" parent="area/row 2" unique_id=574955933 instance=ExtResource("4_la406")]
+position = Vector2(350, 250)
+
+[node name="Tile3" parent="area/row 2" unique_id=620229566 instance=ExtResource("4_la406")]
+position = Vector2(450, 250)
+
+[node name="Tile4" parent="area/row 2" unique_id=2102211910 instance=ExtResource("4_la406")]
+position = Vector2(550, 250)
+
+[node name="Tile5" parent="area/row 2" unique_id=241209516 instance=ExtResource("4_la406")]
+position = Vector2(650, 250)
+
+[node name="Tile6" parent="area/row 2" unique_id=101731339 instance=ExtResource("4_la406")]
+position = Vector2(750, 250)
+
+[node name="Tile7" parent="area/row 2" unique_id=866439106 instance=ExtResource("4_la406")]
+position = Vector2(850, 250)
+
+[node name="row 3" type="Node2D" parent="area" unique_id=993086618]
+
+[node name="Tile1" parent="area/row 3" unique_id=26423141 instance=ExtResource("4_la406")]
+position = Vector2(250, 350)
+
+[node name="Tile2" parent="area/row 3" unique_id=1955294204 instance=ExtResource("4_la406")]
+position = Vector2(350, 350)
+
+[node name="Tile3" parent="area/row 3" unique_id=1961194300 instance=ExtResource("4_la406")]
+position = Vector2(450, 350)
+
+[node name="Tile4" parent="area/row 3" unique_id=1141132314 instance=ExtResource("4_la406")]
+position = Vector2(550, 350)
+
+[node name="Tile5" parent="area/row 3" unique_id=1702079604 instance=ExtResource("4_la406")]
+position = Vector2(650, 350)
+
+[node name="Tile6" parent="area/row 3" unique_id=1612108181 instance=ExtResource("4_la406")]
+position = Vector2(750, 350)
+
+[node name="Tile7" parent="area/row 3" unique_id=483440410 instance=ExtResource("4_la406")]
+position = Vector2(850, 350)
+
+[node name="row 4" type="Node2D" parent="area" unique_id=873327202]
+
+[node name="Tile1" parent="area/row 4" unique_id=771676158 instance=ExtResource("4_la406")]
+position = Vector2(250, 450)
+
+[node name="Tile2" parent="area/row 4" unique_id=476377023 instance=ExtResource("4_la406")]
+position = Vector2(350, 450)
+
+[node name="Tile3" parent="area/row 4" unique_id=559236498 instance=ExtResource("4_la406")]
+position = Vector2(450, 450)
+
+[node name="Tile4" parent="area/row 4" unique_id=1781147325 instance=ExtResource("4_la406")]
+position = Vector2(550, 450)
+
+[node name="Tile5" parent="area/row 4" unique_id=176592454 instance=ExtResource("4_la406")]
+position = Vector2(650, 450)
+
+[node name="Tile6" parent="area/row 4" unique_id=1510228878 instance=ExtResource("4_la406")]
+position = Vector2(750, 450)
+
+[node name="Tile7" parent="area/row 4" unique_id=762384102 instance=ExtResource("4_la406")]
+position = Vector2(850, 450)
+
+[node name="row 5" type="Node2D" parent="area" unique_id=135536472]
+
+[node name="Tile1" parent="area/row 5" unique_id=1120010380 instance=ExtResource("4_la406")]
+position = Vector2(250, 550)
+
+[node name="Tile2" parent="area/row 5" unique_id=1219190372 instance=ExtResource("4_la406")]
+position = Vector2(350, 550)
+
+[node name="Tile3" parent="area/row 5" unique_id=6600032 instance=ExtResource("4_la406")]
+position = Vector2(450, 550)
+
+[node name="Tile4" parent="area/row 5" unique_id=636940803 instance=ExtResource("4_la406")]
+position = Vector2(550, 550)
+
+[node name="Tile5" parent="area/row 5" unique_id=1264279474 instance=ExtResource("4_la406")]
+position = Vector2(650, 550)
+
+[node name="Tile6" parent="area/row 5" unique_id=118150381 instance=ExtResource("4_la406")]
+position = Vector2(750, 550)
+
+[node name="Tile7" parent="area/row 5" unique_id=459060229 instance=ExtResource("4_la406")]
+position = Vector2(850, 550)
+
+[node name="LazyCat" parent="." unique_id=2023012172 instance=ExtResource("2_6b72x")]
+position = Vector2(558, 335)
+_max_health = 40
+_health = 40
+_attack = 15
+
+[node name="Orange" parent="." unique_id=1041684039 instance=ExtResource("4_6b72x")]
+position = Vector2(105, 385)
+
+[node name="Orange2" parent="." unique_id=1427596100 instance=ExtResource("4_6b72x")]
+position = Vector2(462, 335)
+
+[node name="Spawner" parent="." unique_id=1549048918 instance=ExtResource("5_la406")]
+position = Vector2(1192, 306)
+
+[node name="DraggableCard" parent="." unique_id=747510785 instance=ExtResource("6_tci2t")]
+offset_left = 55.0
+offset_top = 59.0
+offset_right = 55.0
+offset_bottom = 59.0
+
+[node name="DroppableSlot" parent="." unique_id=1935657150 instance=ExtResource("7_ycjph")]
+offset_left = 55.0
+offset_top = 200.0
+offset_right = 55.0
+offset_bottom = 200.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1437972994]

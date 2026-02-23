@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://sdsobid2p2nn"]
+
+[ext_resource type="Texture2D" uid="uid://can0e5mn0xmli" path="res://assets/energy.png" id="1_x73w7"]
+
+[sub_resource type="Curve" id="Curve_x73w7"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xh8ta"]
+curve = SubResource("Curve_x73w7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xh8ta"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 20.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 15, 0)
+linear_accel_min = 4.9999976
+linear_accel_max = 4.9999976
+linear_accel_curve = SubResource("CurveTexture_xh8ta")
+scale_min = 3.0
+scale_max = 3.0
+collision_mode = 2
+
+[sub_resource type="Curve" id="Curve_452yq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5rkix"]
+_data = [Vector2(0.023952097, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_y0ogp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_1tfvs"]
+curve_x = SubResource("Curve_452yq")
+curve_y = SubResource("Curve_5rkix")
+curve_z = SubResource("Curve_y0ogp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rx3vl"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 39.5
+initial_velocity_min = 503.93
+initial_velocity_max = 1000.0
+directional_velocity_min = -200.00002
+directional_velocity_max = 199.99998
+directional_velocity_curve = SubResource("CurveXYZTexture_1tfvs")
+gravity = Vector3(0, 500, 0)
+scale_min = 0.099999994
+scale_max = 0.099999994
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x73w7"]
+polygon = PackedVector2Array(100, 0, -100, 0, -100, -7, 100, -7)
+
+[sub_resource type="Animation" id="Animation_x73w7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ZZZ Particle:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_452yq"]
+resource_name = "ZZZ Animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZZZ Particle:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xh8ta"]
+resource_name = "particle"
+length = 1.7666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_452yq"]
+_data = {
+&"RESET": SubResource("Animation_x73w7"),
+&"ZZZ Animation": SubResource("Animation_452yq"),
+&"particle": SubResource("Animation_xh8ta")
+}
+
+[sub_resource type="Curve" id="Curve_xh8ta"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_452yq"]
+curve = SubResource("Curve_xh8ta")
+
+[sub_resource type="Curve" id="Curve_1tfvs"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.29166675), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rx3vl"]
+curve = SubResource("Curve_1tfvs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qa1pr"]
+particle_flag_disable_z = true
+direction = Vector3(0.5, -1, 0)
+spread = 8.0
+initial_velocity_min = 45.0
+initial_velocity_max = 45.0
+gravity = Vector3(0, 3, 0)
+linear_accel_min = -10.000002
+linear_accel_max = -5.000002
+linear_accel_curve = SubResource("CurveTexture_452yq")
+scale_min = 0.049999997
+scale_max = 0.049999997
+scale_curve = SubResource("CurveTexture_rx3vl")
+
+[node name="Particle" type="Node2D" unique_id=416915647]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1589612323]
+visible = false
+emitting = false
+amount = 1
+lifetime = 50.0
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_xh8ta")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=639372469]
+visible = false
+amount = 1
+texture = ExtResource("1_x73w7")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_rx3vl")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=747829715]
+visible = false
+position = Vector2(0, 11.005)
+occluder = SubResource("OccluderPolygon2D_x73w7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=414236312]
+libraries/ = SubResource("AnimationLibrary_452yq")
+
+[node name="ZZZ Particle" type="GPUParticles2D" parent="." unique_id=784680150]
+emitting = false
+amount = 4
+texture = ExtResource("1_x73w7")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_qa1pr")

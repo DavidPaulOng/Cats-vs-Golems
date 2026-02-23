@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Cats vs Golems"
+run/main_scene="uid://bpbfk6l5i0qyr"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+
+[autoload]
+
+GameManager="*uid://drd5861yylm05"
+
+[display]
+
+window/stretch/mode="viewport"
+
+[layer_names]
+
+2d_render/layer_1="Collision"
+2d_physics/layer_2="Cats"
+2d_physics/layer_3="Golems"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

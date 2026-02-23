@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dqp3oips7v81a"]
+
+[sub_resource type="GDScript" id="GDScript_fj0wi"]
+script/source = "extends Control
+
+@onready var _energy_label = $PanelContainer/MarginContainer/VBox/PanelContainer/Label
+
+func _ready() -> void:
+	_update_energy_display(GameManager.energy)
+	GameManager.energy_update.connect(_update_energy_display)
+	
+func _update_energy_display(amount):
+	_energy_label.text = str(amount)
+"
+
+[node name="EnergyDisplay" type="Control" unique_id=32452006]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_fj0wi")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1452960994]
+self_modulate = Color(18.872688, 8.119224, 10.227754, 1)
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 145.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1995442758]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=598384645]
+layout_mode = 2
+
+[node name="Energy" type="Label" parent="PanelContainer/MarginContainer/VBox" unique_id=253562693]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Energy"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox" unique_id=436732761]
+self_modulate = Color(3.590095, 4.206003, 2.577044, 1)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBox/PanelContainer" unique_id=495230895]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1

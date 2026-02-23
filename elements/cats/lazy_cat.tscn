@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://dwdnpttms2rru"]
+
+[ext_resource type="Script" uid="uid://b0vk50ukh64hm" path="res://elements/cats/lazy_cat.gd" id="1_hehhm"]
+[ext_resource type="Resource" uid="uid://dpbhw2mbnxjlw" path="res://resources/cat/LazyCatData.tres" id="2_tsr8j"]
+[ext_resource type="Texture2D" uid="uid://cdhmqjxoeoyn2" path="res://assets/lazy cat shine.png" id="3_qahqt"]
+[ext_resource type="Texture2D" uid="uid://cmrhf0et1xums" path="res://assets/lazy cat lazy.png" id="4_7spwo"]
+[ext_resource type="Texture2D" uid="uid://can0e5mn0xmli" path="res://assets/energy.png" id="5_7spwo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0w5st"]
+font_size = 22
+
+[sub_resource type="Curve" id="Curve_pin58"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.4226191), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rx3vl"]
+curve = SubResource("Curve_pin58")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y0j17"]
+particle_flag_disable_z = true
+direction = Vector3(0.5, -1, 0)
+spread = 8.0
+initial_velocity_min = 10.0
+initial_velocity_max = 12.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.02
+scale_max = 0.02
+scale_curve = SubResource("CurveTexture_rx3vl")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7spwo"]
+size = Vector2(64, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qahqt"]
+size = Vector2(64, 56)
+
+[sub_resource type="Animation" id="Animation_7spwo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qahqt"]
+resource_name = "shaking"
+length = 0.36666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 0), Vector2(1, -1), Vector2(-1, 1), Vector2(0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pin58"]
+_data = {
+&"RESET": SubResource("Animation_7spwo"),
+&"shaking": SubResource("Animation_qahqt")
+}
+
+[node name="LazyCat" type="Node2D" unique_id=2023012172]
+script = ExtResource("1_hehhm")
+energy = 30
+lazy_texture = ExtResource("4_7spwo")
+shine_texture = ExtResource("3_qahqt")
+cat_data = ExtResource("2_tsr8j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1247938799]
+texture_filter = 1
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_7spwo")
+
+[node name="HealthLabel" type="Label" parent="." unique_id=896979383]
+offset_left = -34.0
+offset_top = -78.0
+offset_right = 41.0
+offset_bottom = -39.0
+text = "10/10"
+label_settings = SubResource("LabelSettings_0w5st")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=498241467]
+
+[node name="ZZZ Particle" type="GPUParticles2D" parent="." unique_id=1703595193]
+z_index = 1
+position = Vector2(41, -28)
+amount = 3
+texture = ExtResource("5_7spwo")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_y0j17")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1657790426]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=259155219]
+shape = SubResource("RectangleShape2D_7spwo")
+
+[node name="CollectEnergyArea" type="Area2D" parent="." unique_id=706815632]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectEnergyArea" unique_id=302927816]
+shape = SubResource("RectangleShape2D_qahqt")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1455882880]
+libraries/ = SubResource("AnimationLibrary_pin58")
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="mouse_entered" from="CollectEnergyArea" to="." method="_on_collect_energy_mouse_entered"]
+[connection signal="mouse_exited" from="CollectEnergyArea" to="." method="_on_collect_energy_mouse_exited"]

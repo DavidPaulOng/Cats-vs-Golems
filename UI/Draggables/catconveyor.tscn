@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c47tg5g33kis3"]
+
+[ext_resource type="PackedScene" uid="uid://dqydrg0ska6bp" path="res://UI/Draggables/button_draggable_card.tscn" id="1_tw464"]
+[ext_resource type="Resource" uid="uid://dpbhw2mbnxjlw" path="res://resources/cat/LazyCatData.tres" id="2_ryrf0"]
+[ext_resource type="PackedScene" uid="uid://dwdnpttms2rru" path="res://elements/cats/lazy_cat.tscn" id="3_i57im"]
+[ext_resource type="Resource" uid="uid://dsaf68xryp7lt" path="res://resources/cat/OrangeCatData.tres" id="4_dnry1"]
+[ext_resource type="PackedScene" uid="uid://cafvmjq65kbll" path="res://elements/cats/orange.tscn" id="5_udafb"]
+
+[node name="Catconveyor" type="PanelContainer" unique_id=1043220643]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -101.5
+offset_right = 101.5
+offset_bottom = 95.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1678204970]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer" unique_id=1023069147]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="ButtonDraggableCard" parent="MarginContainer/HBoxContainer2" unique_id=942380171 instance=ExtResource("1_tw464")]
+layout_mode = 2
+size_flags_horizontal = 3
+cat_data = ExtResource("2_ryrf0")
+cat_scene = ExtResource("3_i57im")
+
+[node name="ButtonDraggableCard2" parent="MarginContainer/HBoxContainer2" unique_id=476428908 instance=ExtResource("1_tw464")]
+layout_mode = 2
+size_flags_horizontal = 3
+cat_data = ExtResource("4_dnry1")
+cat_scene = ExtResource("5_udafb")
+
+[node name="ButtonDraggableCard3" parent="MarginContainer/HBoxContainer2" unique_id=122547200 instance=ExtResource("1_tw464")]
+layout_mode = 2
+size_flags_horizontal = 3
+cat_data = ExtResource("4_dnry1")
+cat_scene = ExtResource("5_udafb")

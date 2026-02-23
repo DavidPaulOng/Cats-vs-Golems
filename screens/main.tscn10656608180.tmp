@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://bpbfk6l5i0qyr"]
+
+[ext_resource type="PackedScene" uid="uid://dwdnpttms2rru" path="res://elements/cats/lazy_cat.tscn" id="2_6b72x"]
+[ext_resource type="PackedScene" uid="uid://b4pabekukpe6s" path="res://elements/tile.tscn" id="4_la406"]
+[ext_resource type="PackedScene" uid="uid://cdoc2qlq8pllh" path="res://elements/spawners/spawner.tscn" id="5_la406"]
+[ext_resource type="Resource" uid="uid://dpbhw2mbnxjlw" path="res://resources/cat/LazyCatData.tres" id="6_ee7ou"]
+[ext_resource type="PackedScene" uid="uid://c47tg5g33kis3" path="res://UI/catconveyor.tscn" id="7_cbuj4"]
+[ext_resource type="PackedScene" uid="uid://b48imfq0qo6s" path="res://elements/projectiles/projectile.tscn" id="7_ramac"]
+[ext_resource type="Script" uid="uid://cjfd6iqglhcs4" path="res://resources/cat/CatDataResource.gd" id="8_nrb37"]
+[ext_resource type="Texture2D" uid="uid://663qkf2srx3g" path="res://assets/projectile.png" id="9_owlgm"]
+[ext_resource type="PackedScene" uid="uid://dqp3oips7v81a" path="res://UI/energy_display.tscn" id="10_ramac"]
+[ext_resource type="PackedScene" uid="uid://b036iufiee2yn" path="res://elements/cats/cat.tscn" id="10_xd12c"]
+
+[sub_resource type="GDScript" id="GDScript_cbuj4"]
+script/source = "class_name Main extends Node2D
+
+var dragged_unit: ButtonDraggableCard
+"
+
+[sub_resource type="Resource" id="Resource_era8c"]
+script = ExtResource("8_nrb37")
+health = 4
+attack = 4
+cooldown = 3.0
+projectile = ExtResource("7_ramac")
+texture = ExtResource("9_owlgm")
+metadata/_custom_type_script = "uid://cjfd6iqglhcs4"
+
+[sub_resource type="PackedScene" id="PackedScene_1s7cm"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("BlueCat", "cat_data"),
+"node_count": 1,
+"node_ids": PackedInt32Array(1041684039),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 1, 1, 1, 0),
+"variants": [ExtResource("10_xd12c"), SubResource("Resource_era8c")],
+"version": 3
+}
+
+[node name="Main" type="Node2D" unique_id=919380231]
+script = SubResource("GDScript_cbuj4")
+
+[node name="area" type="Node2D" parent="." unique_id=249111929]
+position = Vector2(0, 31)
+
+[node name="row 1" type="Node2D" parent="area" unique_id=1971123068]
+
+[node name="Tile1" parent="area/row 1" unique_id=647921897 instance=ExtResource("4_la406")]
+position = Vector2(250, 150)
+
+[node name="Tile2" parent="area/row 1" unique_id=1777559529 instance=ExtResource("4_la406")]
+position = Vector2(350, 150)
+
+[node name="Tile3" parent="area/row 1" unique_id=1903374405 instance=ExtResource("4_la406")]
+position = Vector2(450, 150)
+
+[node name="Tile4" parent="area/row 1" unique_id=2001953809 instance=ExtResource("4_la406")]
+position = Vector2(550, 150)
+
+[node name="Tile5" parent="area/row 1" unique_id=1593119059 instance=ExtResource("4_la406")]
+position = Vector2(650, 150)
+
+[node name="Tile6" parent="area/row 1" unique_id=2143751106 instance=ExtResource("4_la406")]
+position = Vector2(750, 150)
+
+[node name="Tile7" parent="area/row 1" unique_id=773581899 instance=ExtResource("4_la406")]
+position = Vector2(850, 150)
+
+[node name="row 2" type="Node2D" parent="area" unique_id=1021831716]
+
+[node name="Tile1" parent="area/row 2" unique_id=744635585 instance=ExtResource("4_la406")]
+position = Vector2(250, 250)
+
+[node name="Tile2" parent="area/row 2" unique_id=574955933 instance=ExtResource("4_la406")]
+position = Vector2(350, 250)
+
+[node name="Tile3" parent="area/row 2" unique_id=620229566 instance=ExtResource("4_la406")]
+position = Vector2(450, 250)
+
+[node name="Tile4" parent="area/row 2" unique_id=2102211910 instance=ExtResource("4_la406")]
+position = Vector2(550, 250)
+
+[node name="Tile5" parent="area/row 2" unique_id=241209516 instance=ExtResource("4_la406")]
+position = Vector2(650, 250)
+
+[node name="Tile6" parent="area/row 2" unique_id=101731339 instance=ExtResource("4_la406")]
+position = Vector2(750, 250)
+
+[node name="Tile7" parent="area/row 2" unique_id=866439106 instance=ExtResource("4_la406")]
+position = Vector2(850, 250)
+
+[node name="row 3" type="Node2D" parent="area" unique_id=993086618]
+
+[node name="Tile1" parent="area/row 3" unique_id=26423141 instance=ExtResource("4_la406")]
+position = Vector2(250, 350)
+
+[node name="Tile2" parent="area/row 3" unique_id=1955294204 instance=ExtResource("4_la406")]
+position = Vector2(350, 350)
+
+[node name="Tile3" parent="area/row 3" unique_id=1961194300 instance=ExtResource("4_la406")]
+position = Vector2(450, 350)
+
+[node name="Tile4" parent="area/row 3" unique_id=1141132314 instance=ExtResource("4_la406")]
+position = Vector2(550, 350)
+
+[node name="Tile5" parent="area/row 3" unique_id=1702079604 instance=ExtResource("4_la406")]
+position = Vector2(650, 350)
+
+[node name="Tile6" parent="area/row 3" unique_id=1612108181 instance=ExtResource("4_la406")]
+position = Vector2(750, 350)
+
+[node name="Tile7" parent="area/row 3" unique_id=483440410 instance=ExtResource("4_la406")]
+position = Vector2(850, 350)
+
+[node name="row 4" type="Node2D" parent="area" unique_id=873327202]
+
+[node name="Tile1" parent="area/row 4" unique_id=771676158 instance=ExtResource("4_la406")]
+position = Vector2(250, 450)
+
+[node name="Tile2" parent="area/row 4" unique_id=476377023 instance=ExtResource("4_la406")]
+position = Vector2(350, 450)
+
+[node name="Tile3" parent="area/row 4" unique_id=559236498 instance=ExtResource("4_la406")]
+position = Vector2(450, 450)
+
+[node name="Tile4" parent="area/row 4" unique_id=1781147325 instance=ExtResource("4_la406")]
+position = Vector2(550, 450)
+
+[node name="Tile5" parent="area/row 4" unique_id=176592454 instance=ExtResource("4_la406")]
+position = Vector2(650, 450)
+
+[node name="Tile6" parent="area/row 4" unique_id=1510228878 instance=ExtResource("4_la406")]
+position = Vector2(750, 450)
+
+[node name="Tile7" parent="area/row 4" unique_id=762384102 instance=ExtResource("4_la406")]
+position = Vector2(850, 450)
+
+[node name="row 5" type="Node2D" parent="area" unique_id=135536472]
+
+[node name="Tile1" parent="area/row 5" unique_id=1120010380 instance=ExtResource("4_la406")]
+position = Vector2(250, 550)
+
+[node name="Tile2" parent="area/row 5" unique_id=1219190372 instance=ExtResource("4_la406")]
+position = Vector2(350, 550)
+
+[node name="Tile3" parent="area/row 5" unique_id=6600032 instance=ExtResource("4_la406")]
+position = Vector2(450, 550)
+
+[node name="Tile4" parent="area/row 5" unique_id=636940803 instance=ExtResource("4_la406")]
+position = Vector2(550, 550)
+
+[node name="Tile5" parent="area/row 5" unique_id=1264279474 instance=ExtResource("4_la406")]
+position = Vector2(650, 550)
+
+[node name="Tile6" parent="area/row 5" unique_id=118150381 instance=ExtResource("4_la406")]
+position = Vector2(750, 550)
+
+[node name="Tile7" parent="area/row 5" unique_id=459060229 instance=ExtResource("4_la406")]
+position = Vector2(850, 550)
+
+[node name="Spawner" parent="." unique_id=1549048918 instance=ExtResource("5_la406")]
+position = Vector2(1053, 250)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=218961266]
+
+[node name="Catconveyor" parent="CanvasLayer" unique_id=890673940 instance=ExtResource("7_cbuj4")]
+offset_left = -376.0
+offset_right = -64.0
+offset_bottom = 105.0
+
+[node name="ButtonDraggableCard" parent="CanvasLayer/Catconveyor/MarginContainer/HBoxContainer2" parent_id_path=PackedInt32Array(890673940, 1023069147) index="0" unique_id=942380171]
+cat_data = ExtResource("6_ee7ou")
+cat_scene = ExtResource("2_6b72x")
+
+[node name="ButtonDraggableCard3" parent="CanvasLayer/Catconveyor/MarginContainer/HBoxContainer2" parent_id_path=PackedInt32Array(890673940, 1023069147) index="2" unique_id=122547200]
+cat_data = SubResource("Resource_era8c")
+cat_scene = SubResource("PackedScene_1s7cm")
+
+[node name="EnergyDisplay" parent="CanvasLayer" unique_id=32452006 instance=ExtResource("10_ramac")]
+
+[node name="Spawner2" parent="." unique_id=507351259 instance=ExtResource("5_la406")]
+position = Vector2(1053, 481)
+
+[node name="Spawner2" parent="Spawner2" unique_id=1647764203 instance=ExtResource("5_la406")]
+position = Vector2(1053, 363)
+
+[editable path="CanvasLayer/Catconveyor"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Level_01" format=3 uid="uid://cbhk3xw8v5an4"]
+
+[ext_resource type="Script" uid="uid://cpysfgn2g0ij3" path="res://resources/waves/Level_01.gd" id="1_8a1x3"]
+[ext_resource type="PackedScene" uid="uid://dvnpa1wu535iy" path="res://elements/golems/Golem.tscn" id="1_w0a5h"]
+
+[resource]
+script = ExtResource("1_8a1x3")
+_golem_basic_scene = ExtResource("1_w0a5h")
+_not_golem_basic_scene = ExtResource("1_w0a5h")
+metadata/_custom_type_script = "uid://cpysfgn2g0ij3"

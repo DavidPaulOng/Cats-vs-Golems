@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://didlt28piupll"]
+
+[ext_resource type="Script" uid="uid://7vrddwjh50qu" path="res://screens/menu.gd" id="1_dc0yw"]
+[ext_resource type="Texture2D" uid="uid://clp5thvhetkbd" path="res://assets/lazy_cat.png" id="2_o3ram"]
+
+[sub_resource type="Theme" id="Theme_lt0en"]
+
+[node name="Menu" type="Control" unique_id=1069802589]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dc0yw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1939128856]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.8156863, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=298749607]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = -305.0
+offset_right = 243.0
+offset_bottom = 305.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainUIContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1443892213]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/MainUIContainer" unique_id=287019959]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.35588485, 0.5474367, 0.57651657, 1)
+theme_override_font_sizes/font_size = 60
+text = "Cats and Golems"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/MainUIContainer" unique_id=103351665]
+self_modulate = Color(6.381193, 12.159852, 8.599239, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/MainUIContainer/PanelContainer" unique_id=1331222901]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MainUIContainer/PanelContainer/MarginContainer" unique_id=1969691958]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MainUIContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1243506133]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PlayButton" type="Button" parent="CenterContainer/MainUIContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=288392601]
+layout_mode = 2
+text = "Play"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/MainUIContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=945633932]
+layout_mode = 2
+text = "Exit"
+
+[node name="FunBox" type="PanelContainer" parent="CenterContainer/MainUIContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2091036881]
+self_modulate = Color(16.020884, 12.414603, 5.2020426, 0)
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme = SubResource("Theme_lt0en")
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/MainUIContainer/PanelContainer/MarginContainer/VBoxContainer/FunBox" unique_id=1226095501]
+layout_mode = 2
+texture = ExtResource("2_o3ram")
+stretch_mode = 5
+
+[node name="CreditLabel" type="Label" parent="CenterContainer/MainUIContainer/PanelContainer/MarginContainer/VBoxContainer/FunBox" unique_id=306588768]
+self_modulate = Color(0.0025569145, 0.006592752, 0, 1)
+layout_mode = 2
+text = "I love Cats"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/MainUIContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainUIContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

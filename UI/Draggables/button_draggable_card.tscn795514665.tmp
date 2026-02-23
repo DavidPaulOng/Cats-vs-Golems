@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dqydrg0ska6bp"]
+
+[ext_resource type="Script" uid="uid://cpiiqiyu1xp8o" path="res://elements/UI/Draggables/button_draggable_card.gd" id="1_h71mi"]
+[ext_resource type="PackedScene" uid="uid://cafvmjq65kbll" path="res://elements/cats/orange.tscn" id="2_1nolb"]
+[ext_resource type="Texture2D" uid="uid://663qkf2srx3g" path="res://assets/projectile.png" id="2_pjpm6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjpm6"]
+size = Vector2(42, 42)
+
+[node name="ButtonDraggableCard" type="PanelContainer" unique_id=278704441]
+self_modulate = Color(17.787, 3.581, 3.581, 0)
+offset_right = 20.0
+offset_bottom = 20.0
+mouse_filter = 2
+script = ExtResource("1_h71mi")
+unit = ExtResource("2_1nolb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=484641912]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_pjpm6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1208902869]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=782657626]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_pjpm6")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

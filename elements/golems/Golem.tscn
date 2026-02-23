@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dvnpa1wu535iy"]
+
+[ext_resource type="Script" uid="uid://c6mhissk2f2qg" path="res://elements/golems/golem.gd" id="1_w0660"]
+[ext_resource type="Resource" uid="uid://ba6aaoi630lcm" path="res://resources/golem/BasicGolemData.tres" id="2_7fegd"]
+[ext_resource type="Texture2D" uid="uid://dryog4yayag03" path="res://assets/golem basic new.png" id="2_j6x4t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w0660"]
+font_size = 22
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6nnv"]
+size = Vector2(30, 100)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6x4t"]
+radius = 7.071068
+
+[node name="Golem" type="Node2D" unique_id=876448849]
+script = ExtResource("1_w0660")
+golem_data = ExtResource("2_7fegd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1481874991]
+texture = ExtResource("2_j6x4t")
+
+[node name="HealthLabel" type="Label" parent="." unique_id=222602902]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -34.0
+offset_top = -123.0
+offset_right = 41.0
+offset_bottom = -84.0
+text = "10/10"
+label_settings = SubResource("LabelSettings_w0660")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1659367846]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=904839938]
+shape = SubResource("RectangleShape2D_v6nnv")
+
+[node name="AttackPosition" type="Area2D" parent="." unique_id=423795018]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPosition" unique_id=679914708]
+position = Vector2(-34, 0)
+shape = SubResource("CircleShape2D_j6x4t")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1307239250]
+
+[connection signal="area_entered" from="AttackPosition" to="." method="_on_attack_position_area_entered"]
+[connection signal="area_exited" from="AttackPosition" to="." method="_on_attack_position_area_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

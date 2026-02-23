@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cyo8xbqntr7ny"]
+
+[ext_resource type="PackedScene" uid="uid://b4pabekukpe6s" path="res://elements/tile.tscn" id="1_aefm2"]
+[ext_resource type="PackedScene" uid="uid://cafvmjq65kbll" path="res://elements/cats/orange.tscn" id="1_gb08i"]
+[ext_resource type="PackedScene" uid="uid://dvnpa1wu535iy" path="res://elements/golems/Golem.tscn" id="3_wruk2"]
+
+[node name="Test" type="Node2D" unique_id=1009421907]
+
+[node name="Tile" parent="." unique_id=647921897 instance=ExtResource("1_aefm2")]
+position = Vector2(200, 122)
+
+[node name="Tile2" parent="." unique_id=576005764 instance=ExtResource("1_aefm2")]
+position = Vector2(329, 122)
+
+[node name="Orange" parent="." unique_id=1041684039 instance=ExtResource("1_gb08i")]
+position = Vector2(631, 200)
+
+[node name="Golem" parent="." unique_id=876448849 instance=ExtResource("3_wruk2")]
+position = Vector2(725, 438)
+
+[node name="Tile3" parent="." unique_id=747920116 instance=ExtResource("1_aefm2")]
+position = Vector2(431, 122)

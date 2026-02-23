@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b4pabekukpe6s"]
+
+[ext_resource type="Script" uid="uid://8b48e6hw2vl5" path="res://elements/tile.gd" id="1_8v7er"]
+[ext_resource type="Texture2D" uid="uid://n0hxsogi3y4m" path="res://assets/Tile Border White.png" id="2_8v7er"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8v7er"]
+size = Vector2(103.74999, 107.49999)
+
+[node name="Tile" type="Node2D" unique_id=647921897]
+script = ExtResource("1_8v7er")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1127342354]
+modulate = Color(0.6407511, 0.6395004, 0.29408056, 1)
+texture = ExtResource("2_8v7er")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=930333560]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=347374984]
+position = Vector2(0.50000155, -1.0000014)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_8v7er")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
