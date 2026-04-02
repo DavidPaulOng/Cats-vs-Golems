@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://3lfgjgonolg4"]
+
+[ext_resource type="Script" uid="uid://cmqaeqo3c12ab" path="res://UI/Draggables/PointerArea/point_area.gd" id="1_owvh6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fqfj7"]
+radius = 3.0
+
+[node name="PointArea" type="Node2D" unique_id=465178691]
+self_modulate = Color(0.79965895, 0.43347713, 1.0156125, 0.6901961)
+script = ExtResource("1_owvh6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1404750451]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1563708799]
+shape = SubResource("CircleShape2D_fqfj7")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

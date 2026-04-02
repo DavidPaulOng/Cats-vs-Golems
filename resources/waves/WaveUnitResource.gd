@@ -5,4 +5,3 @@ var amount
 func _init(_unit:PackedScene, _amount: float):
 	unit = _unit
 	amount = _amount
-	print(amount)

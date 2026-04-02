@@ -1,5 +1,7 @@
 class_name Cat extends Node
 
+signal update_energy(amount)
+
 @export var cat_data: Resource
 @onready var _sprite = $Sprite2D
 @onready var _health_label = $HealthLabel
@@ -12,6 +14,7 @@ var health :int:
 		update_health_label()
 		if health == 0:
 			queue_free()
+			
 var attack: int
 var cooldown: float 
 var projectile: PackedScene

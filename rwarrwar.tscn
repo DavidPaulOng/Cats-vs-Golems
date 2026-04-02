@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cubdyrx8etmvg"]
+
+[ext_resource type="PackedScene" uid="uid://ccc7buunoe28p" path="res://UI/Draggables/PointerArea/draggable_card.tscn" id="1_fgxjh"]
+[ext_resource type="PackedScene" uid="uid://b4pabekukpe6s" path="res://elements/tile.tscn" id="4_cv20t"]
+
+[node name="Rwarrwar" type="Node2D" unique_id=856105030]
+
+[node name="Tile" parent="." unique_id=647921897 instance=ExtResource("4_cv20t")]
+position = Vector2(274, 193)
+
+[node name="DraggableCard" parent="." unique_id=77674251 instance=ExtResource("1_fgxjh")]
+offset_left = 225.0
+offset_top = 6.0
+offset_right = 325.0
+offset_bottom = 106.0

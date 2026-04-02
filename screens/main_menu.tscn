@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://didlt28piupll"]
 
-[ext_resource type="Script" uid="uid://7vrddwjh50qu" path="res://screens/menu.gd" id="1_dc0yw"]
+[ext_resource type="Script" uid="uid://7vrddwjh50qu" path="res://screens/main_menu.gd" id="1_dc0yw"]
 [ext_resource type="Texture2D" uid="uid://clp5thvhetkbd" path="res://assets/lazy_cat.png" id="2_o3ram"]
 
 [sub_resource type="Theme" id="Theme_lt0en"]

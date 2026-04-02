@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ccc7buunoe28p"]
+
+[ext_resource type="Script" uid="uid://dajyr3vs4vmxp" path="res://UI/Draggables/PointerArea/draggable_card.gd" id="1_i45r8"]
+[ext_resource type="Texture2D" uid="uid://cmrhf0et1xums" path="res://assets/lazy cat lazy.png" id="2_6rhfr"]
+[ext_resource type="Resource" uid="uid://dpbhw2mbnxjlw" path="res://resources/cat/LazyCatData.tres" id="2_lm8vi"]
+[ext_resource type="PackedScene" uid="uid://dwdnpttms2rru" path="res://elements/cats/lazy_cat.tscn" id="3_86x0l"]
+[ext_resource type="Texture2D" uid="uid://663qkf2srx3g" path="res://assets/projectile.png" id="5_86x0l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86x0l"]
+bg_color = Color(0.055890933, 0.34335074, 0.15890509, 1)
+
+[node name="DraggableCard" type="PanelContainer" unique_id=77674251]
+offset_right = 71.0
+offset_bottom = 73.0
+script = ExtResource("1_i45r8")
+cat_data = ExtResource("2_lm8vi")
+cat_scene = ExtResource("3_86x0l")
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=94028252]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="PanelContainer2" unique_id=326220686]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2" unique_id=748457402]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/MarginContainer" unique_id=1984625071]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_6rhfr")
+expand_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=662597133]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_86x0l")
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=1712788268]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/CenterContainer" unique_id=714505752]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/CenterContainer/HBoxContainer" unique_id=1881473189]
+layout_mode = 2
+texture = ExtResource("5_86x0l")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/CenterContainer/HBoxContainer" unique_id=1205702114]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "10"
+
+[connection signal="mouse_entered" from="PanelContainer2/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer2/Button" to="." method="_on_button_mouse_exited"]

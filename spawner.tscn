@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cp2o6ypawnmsj"]
+
+[ext_resource type="PackedScene" uid="uid://dvnpa1wu535iy" path="res://elements/golems/Golem.tscn" id="1_ttk4a"]
+[ext_resource type="Texture2D" uid="uid://bixl8yty2l4ub" path="res://assets/golem basic.png" id="2_mcln3"]
+
+[sub_resource type="GDScript" id="GDScript_bphdf"]
+script/source = "extends Node2D
+
+@export var entity_scene : PackedScene
+@export var spawn_interval : float
+@onready var _spawn_timer : Timer = $Timer
+
+func _ready() -> void:
+	start_timer()
+	
+func spawn():
+	var new_entity = entity_scene.instantiate()
+	add_child(new_entity) #add entity as child of spawner
+
+func _on_timer_timeout() -> void:
+	spawn()
+
+func start_timer():	
+	_spawn_timer.start(spawn_interval)
+
+func stop_timer():
+	_spawn_timer.stop()
+"
+
+[node name="Spawner" type="Node2D" unique_id=1549048918]
+script = SubResource("GDScript_bphdf")
+entity_scene = ExtResource("1_ttk4a")
+spawn_interval = 10.0
+
+[node name="Timer" type="Timer" parent="." unique_id=915039897]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1680988968]
+texture = ExtResource("2_mcln3")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

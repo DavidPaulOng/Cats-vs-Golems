@@ -1,4 +1,4 @@
-class_name DraggableCard extends Control
+class_name DraggableCard_old extends Control
 
 signal dragged_away(unit: DraggableCard)
 

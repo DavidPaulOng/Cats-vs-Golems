@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjy4yxtquj403" path="res://elements/cats/cat.gd" id="1_l78c2"]
 [ext_resource type="Texture2D" uid="uid://clp5thvhetkbd" path="res://assets/lazy_cat.png" id="2_ep8la"]
+[ext_resource type="Resource" uid="uid://dpbhw2mbnxjlw" path="res://resources/cat/LazyCatData.tres" id="2_l78c2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3kdbq"]
 font_size = 22
@@ -11,6 +12,7 @@ radius = 48.0
 
 [node name="Cat" type="Node2D" unique_id=1041684039]
 script = ExtResource("1_l78c2")
+cat_data = ExtResource("2_l78c2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1877905755]
 texture = ExtResource("2_ep8la")

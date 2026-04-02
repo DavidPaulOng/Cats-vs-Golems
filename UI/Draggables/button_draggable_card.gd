@@ -14,13 +14,15 @@ func _input(event) -> void:
 	if event is InputEventMouseButton and event.pressed and _mouse_entered:
 		match event.button_index:
 			MOUSE_BUTTON_LEFT:
+				print("Press card")
 				dragging = true
 				preview = _texture_rect.duplicate()
 				GameManager.currently_dragged_card = self
 				GameManager.currently_dragged_unit_scene = cat_scene
 				add_child(preview)
+				print("Status: ", GameManager.currently_dragged_card)
 				
-	if event is InputEventMouseButton and not event.pressed and dragging:
+	if event is InputEventMouseButton and not event.pressed and dragging :
 		match event.button_index:
 			MOUSE_BUTTON_LEFT:
 				dragging = false
